@@ -176,13 +176,10 @@ Process data with similar codes in problem B, plus "WW" column
 hD2 <- group_by(hD, WW, interval) %>% summarise(avg = mean(steps))
 ```
 Using data set 'hD2',  
-we see the line of weekend in magenta, and the line of weekday in skyblue
-
+we see the lines of weekend and weekday
 
 ``` {r D2b}
 ggplot(hD2,aes(interval,avg,group=WW)) +
   geom_line(colour="blue")+facet_wrap(~WW, ncol=1) +
     xlab("Interval")+ylab("Number of steps")+theme_bw()
 ```
-
-
